@@ -1,0 +1,30 @@
+{
+  "name": "mcp-tool",
+  "version": "0.0.1",
+  "description": "mcp-tool MCP server",
+  "type": "module",
+  "bin": {
+    "mcp-tool": "./dist/index.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc && mcp-build",
+    "watch": "tsc --watch",
+    "start": "node dist/index.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.8.0",
+    "mcp-framework": "^0.2.2"
+  },
+  "devDependencies": {
+    "@baidu/eslint-config-prettier": "^1.2.0",
+    "@types/node": "^20.11.24",
+    "prettier": "^3.5.3",
+    "typescript": "^5.3.3"
+  },
+  "engines": {
+    "node": ">=18.19.0"
+  }
+}
