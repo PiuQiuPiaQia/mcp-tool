@@ -1,31 +1,34 @@
 {
-  "name": "mcp-tool",
-  "version": "0.0.1",
-  "description": "mcp-tool MCP server",
-  "type": "module",
-  "bin": {
-    "mcp-tool": "./dist/index.js"
-  },
-  "files": [
-    "dist"
-  ],
-  "scripts": {
-    "build": "tsc && mcp-build",
-    "watch": "tsc --watch",
-    "start": "node dist/index.js",
-    "inspect": "npx @modelcontextprotocol/inspector dist/index.js"
-  },
-  "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.8.0",
-    "mcp-framework": "^0.2.2"
-  },
-  "devDependencies": {
-    "@baidu/eslint-config-prettier": "^1.2.0",
-    "@types/node": "^20.11.24",
-    "prettier": "^3.5.3",
-    "typescript": "^5.3.3"
-  },
-  "engines": {
-    "node": ">=18.19.0"
-  }
+    "name": "mcp-tool",
+    "version": "0.0.1",
+    "description": "mcp-tool MCP server",
+    "type": "module",
+    "bin": {
+        "mcp-tool": "./dist/index.js"
+    },
+    "files": [
+        "dist"
+    ],
+    "scripts": {
+        "build": "tsc && shx chmod +x dist/*.js",
+        "prepare": "yarn build",
+        "watch": "tsc --watch",
+        "inspect": "npx @modelcontextprotocol/inspector dist/index.js"
+    },
+    "dependencies": {
+        "@modelcontextprotocol/sdk": "^1.8.0",
+        "node-fetch": "^3.3.2",
+        "universal-user-agent": "^7.0.2",
+        "zod": "^3.22.4"
+    },
+    "devDependencies": {
+        "@types/node": "^20.11.24",
+        "prettier": "^3.5.3",
+        "typescript": "^5.3.3",
+        "shx": "^0.3.4"
+    },
+    "engines": {
+        "node": ">=18.19.0"
+    },
+    "license": "MIT"
 }
